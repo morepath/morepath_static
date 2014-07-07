@@ -27,9 +27,9 @@ def root_default(self, request):
             "jquery is inserted in the HTML source</body></html>")
 
 
-@app.static_includer()
-def get_static_includer(request):
-    return components.includer(request.environ)
+@app.static_components()
+def get_static_includer():
+    return components
 
 
 def main():
