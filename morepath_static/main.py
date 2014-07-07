@@ -4,13 +4,6 @@ import bowerstatic
 import os
 
 
-bower = bowerstatic.Bower()
-
-
-components = bower.components(
-    'app', os.path.join(os.path.dirname(__file__), 'bower_components'))
-
-
 class app(StaticApp):
     pass
 
@@ -27,12 +20,19 @@ def root_default(self, request):
             "jquery is inserted in the HTML source</body></html>")
 
 
+bower = bowerstatic.Bower()
+
+
+components = bower.components(
+    'app', os.path.join(os.path.dirname(__file__), 'bower_components'))
+
+
 @app.static_components()
-def get_static_includer():
+def get_static_components():
     return components
 
 
 def main():
     morepath.autosetup()
-    bower_app = bower.wrap(app())
-    morepath.run(bower_app)
+    wsgi = bower.wrap(app())
+    morepath.run(wsgi)
