@@ -15,9 +15,9 @@ class Root(object):
 
 @app.html(model=Root)
 def root_default(self, request):
-    request.include('jquery')
+    request.include('my_component')
     return ("<!DOCTYPE html><html><head></head><body>"
-            "jquery is inserted in the HTML source</body></html>")
+            "components are inserted in the HTML source</body></html>")
 
 
 bower = bowerstatic.Bower()
@@ -27,9 +27,16 @@ components = bower.components(
     'app', os.path.join(os.path.dirname(__file__), 'bower_components'))
 
 
+local = bower.local_components('local', components)
+
+
+local.component(os.path.join(os.path.dirname(__file__), 'my_component'),
+                version=None)
+
+
 @app.static_components()
 def get_static_components():
-    return components
+    return local
 
 
 def main():
