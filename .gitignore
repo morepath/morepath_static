@@ -6,3 +6,4 @@ src
 eggs
 develop-eggs
 .tern-port
+*.egg-info
