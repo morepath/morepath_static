@@ -41,5 +41,4 @@ def get_static_components():
 
 def main():
     morepath.autosetup()
-    wsgi = bower.wrap(app())
-    morepath.run(wsgi)
+    morepath.run(app())
