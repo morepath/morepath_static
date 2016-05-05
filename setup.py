@@ -1,23 +1,50 @@
-import os
+# -*- coding: utf-8 -*-
+
+import io
 from setuptools import setup, find_packages
 
-setup(name='morepath_static',
-      version = '0.1dev',
-      description="Morepath more.static demo app",
-      author="Martijn Faassen",
-      author_email="faassen@startifact.com",
-      license="BSD",
-      packages=find_packages(),
-      include_package_data=True,
-      zip_safe=False,
-      install_requires=[
-          'setuptools',
-          'morepath',
-          'more.static',
+name = 'morepath_static'
+description = (
+    'Morepath more.static demo app'
+)
+long_description = (
+    io.open('README.rst', encoding='utf-8').read() + '\n\n' +
+    io.open('CHANGES.rst', encoding='utf-8').read())
+version = '0.1.dev0'
+
+setup(
+    name=name,
+    version=version,
+    description=description,
+    long_description=long_description,
+    author='Morepath developers',
+    author_email='morepath@googlegroups.com',
+    license="BSD",
+    url="https://github.com/morepath/morepath_rest_dump_load",
+    packages=find_packages(),
+    include_package_data=True,
+    zip_safe=False,
+    install_requires=[
+        'morepath>=0.14',
+        'more.static',
+    ],
+    extras_require=dict(
+        test=[
+            'pytest',
+            'pytest-cov',
+            'webtest',
         ],
-      entry_points= {
+    ),
+    entry_points={
         'console_scripts': [
-            'morepath_static = morepath_static.main:main',
-            ]
-        },
-      )
+            'morepath_static = morepath_static.run:run',
+        ]
+    },
+    classifiers=[
+        'Intended Audience :: Developers',
+        'Environment :: Web Environment',
+        'Topic :: Internet :: WWW/HTTP :: WSGI',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
+    ]
+)

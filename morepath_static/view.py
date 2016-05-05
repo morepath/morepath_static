@@ -1,19 +1,11 @@
-import morepath
-from more.static import StaticApp
 import bowerstatic
 import os
 
-
-class app(StaticApp):
-    pass
-
-
-@app.path(path='/')
-class Root(object):
-    pass
+from .model import Root
+from .app import App
 
 
-@app.html(model=Root)
+@App.html(model=Root)
 def root_default(self, request):
     request.include('my_component')
     return ("<!DOCTYPE html><html><head></head><body>"
@@ -34,11 +26,6 @@ local.component(os.path.join(os.path.dirname(__file__), 'my_component'),
                 version=None)
 
 
-@app.static_components()
+@App.static_components()
 def get_static_components():
     return local
-
-
-def main():
-    morepath.autosetup()
-    morepath.run(app())
