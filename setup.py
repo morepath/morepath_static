@@ -37,7 +37,7 @@ setup(
     ),
     entry_points={
         'console_scripts': [
-            'morepath_static = morepath_static.run:run',
+            'morepath_static = morepath_static.__main__:run',
         ]
     },
     classifiers=[
