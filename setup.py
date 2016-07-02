@@ -43,8 +43,10 @@ setup(
     classifiers=[
         'Intended Audience :: Developers',
         'Environment :: Web Environment',
+        'License :: OSI Approved :: BSD License',
         'Topic :: Internet :: WWW/HTTP :: WSGI',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
     ]
 )
