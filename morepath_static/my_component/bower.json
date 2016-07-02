@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "homepage": "https://github.com/morepath/morepath_static",
   "authors": [
-    "faassen <faassen@startifact.com>"
+    "Morepath developers <morepath@googlegroups.com>"
   ],
   "main": "main.js",
   "dependencies": {
     "jquery": "2.1.1"
   },
-  "license": "MIT",
+  "license": "BSD",
   "private": true,
   "ignore": [
     "**/.*",
