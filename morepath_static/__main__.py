@@ -2,7 +2,7 @@ import morepath
 from .app import App
 
 
-def run():   # pragma: no cover
+def run():
     morepath.run(App())
 
 
