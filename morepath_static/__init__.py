@@ -1,3 +1,4 @@
 # flake8: noqa
 
-from morepath_static.app import App
+from .app import App
+from . import path, static, view  # load App directives
