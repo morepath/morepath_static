@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='morepath_static',
-    version='0.1',
+    version='0.2.dev0',
     description=(
         'A demo app for Morepath with static resources'
     ),
