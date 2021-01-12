@@ -1,3 +1,17 @@
+.. image:: https://github.com/morepath/morepath_static/workflows/CI/badge.svg?branch=master
+   :target: https://github.com/morepath/morepath_static/actions?workflow=CI
+   :alt: CI Status
+
+.. image:: https://coveralls.io/repos/github/morepath/morepath_static/badge.svg?branch=master
+    :target: https://coveralls.io/github/morepath/morepath_static?branch=master
+
+.. image:: https://img.shields.io/pypi/v/morepath_static.svg
+  :target: https://pypi.org/project/morepath_static/
+
+.. image:: https://img.shields.io/pypi/pyversions/morepath_static.svg
+  :target: https://pypi.org/project/morepath_static/
+
+
 Morepath_static
 ===============
 
