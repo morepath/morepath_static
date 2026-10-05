@@ -3,7 +3,6 @@ import os
 
 from .app import App
 
-
 bower = bowerstatic.Bower()
 
 
